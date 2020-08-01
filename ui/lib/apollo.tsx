@@ -27,13 +27,12 @@ let apolloClient: ApolloClient<ApolloClientCache> | null = null;
 
 
  interface WithApolloInitialProps {
-
- }
+    apolloState?: ApolloClientCache;
+}
 
 
  interface WithApolloProps extends WithApolloInitialProps {
      apolloClient?: ApolloClient<ApolloClientCache>;
-     apolloState: any;
  }
  interface PageInitialProps {
 
