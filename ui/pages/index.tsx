@@ -1,11 +1,24 @@
 import React from 'react';
+import {NextPage} from 'next';
 
-const IndexPage = () => {
+interface InitialProps {
+    greeting: string;
+}
+
+interface Props extends InitialProps {
+    
+}
+
+const IndexPage: NextPage<Props, InitialProps> = (props) => {
     return(
         <div>
-            Hello World
+            {props.greeting}
         </div>
     )
 }
+
+IndexPage.getInitialProps = async () => ({
+    greeting: "hello"
+})
 
 export default IndexPage
